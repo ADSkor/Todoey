@@ -12,8 +12,15 @@ class ToDoListViewController: UITableViewController {
 
     var itemArray = ["Юра Спать", "Саша Заниматься", "Санька Заниматься"]
     
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let items = defaults.array(forKey: "ToDoListArray") as? [String] {
+            itemArray = items
+        }
+        
     }
 
     //MARK - TableView Datasource Methods(Методы)
@@ -58,6 +65,8 @@ class ToDoListViewController: UITableViewController {
             
             //What will heppend when user press "Добавить" button(Здесь добавим что произойдет когда будет нажата кнопка после алерта)
             self.itemArray.append(textField.text!)
+            
+            self.defaults.set(self.itemArray, forKey: "ToDoListArray")
             
             self.tableView.reloadData()
             
