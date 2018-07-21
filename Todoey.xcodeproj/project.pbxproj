@@ -12,8 +12,9 @@
 		1E1599A420F3E2B2004836FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E1599A220F3E2B2004836FE /* Main.storyboard */; };
 		1E1599A620F3E2B3004836FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E1599A520F3E2B3004836FE /* Assets.xcassets */; };
 		1E1599A920F3E2B3004836FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E1599A720F3E2B3004836FE /* LaunchScreen.storyboard */; };
-		1E51726720FBC5150048D144 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E51726620FBC5150048D144 /* Item.swift */; };
+		1E2533EA20FD191E00443185 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1E2533E820FD191E00443185 /* DataModel.xcdatamodeld */; };
 		1E51726D20FBCE3F0048D144 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E51726C20FBCE3E0048D144 /* Info.plist */; };
+		1EFA83E72101D039008D5A01 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFA83E62101D039008D5A01 /* CategoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,8 +24,9 @@
 		1E1599A320F3E2B2004836FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1E1599A520F3E2B3004836FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E1599A820F3E2B3004836FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		1E51726620FBC5150048D144 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		1E2533E920FD191E00443185 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		1E51726C20FBCE3E0048D144 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Todoey/Info.plist; sourceTree = "<group>"; };
+		1EFA83E62101D039008D5A01 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +72,7 @@
 		1E51726820FBC5240048D144 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				1E51726620FBC5150048D144 /* Item.swift */,
+				1E2533E820FD191E00443185 /* DataModel.xcdatamodeld */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -78,6 +80,7 @@
 		1E51726920FBC5420048D144 /* Contollers */ = {
 			isa = PBXGroup;
 			children = (
+				1EFA83E62101D039008D5A01 /* CategoryViewController.swift */,
 				1E1599A020F3E2B2004836FE /* ToDoListViewController.swift */,
 			);
 			path = Contollers;
@@ -172,8 +175,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EFA83E72101D039008D5A01 /* CategoryViewController.swift in Sources */,
 				1E1599A120F3E2B2004836FE /* ToDoListViewController.swift in Sources */,
-				1E51726720FBC5150048D144 /* Item.swift in Sources */,
+				1E2533EA20FD191E00443185 /* DataModel.xcdatamodeld in Sources */,
 				1E15999F20F3E2B2004836FE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,6 +376,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1E2533E820FD191E00443185 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1E2533E920FD191E00443185 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 1E2533E920FD191E00443185 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1E15999320F3E2B2004836FE /* Project object */;
 }
