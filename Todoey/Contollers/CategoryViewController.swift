@@ -9,17 +9,14 @@
 import UIKit
 import RealmSwift
 
-class CategoryViewController: UITableViewController {
+class CategoryViewController: SwipeTableViewController {
     
     let realm = try! Realm()
     
     var categories: Results<Category>?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         loadCategories()
-        
     }
     
     //MARK: - TableView Datasource Methods (Методы обработки данных)
@@ -29,13 +26,15 @@ class CategoryViewController: UITableViewController {
         return categories?.count ?? 1
         
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
+        cell.imageView?.image = UIImage(named: "New")
         
         cell.textLabel?.text = categories?[indexPath.row].name ?? "Ещё не добавлено ни одной задачи"
-        
+
         return cell
         
     }
@@ -77,6 +76,20 @@ class CategoryViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    //MARK: - Delete Data From Swipe
+    
+    override func updateModel(at indexPath: IndexPath) {
+        if let categoryForDeletion = self.categories?[indexPath.row] {
+            do {
+                try self.realm.write {
+                    self.realm.delete(categoryForDeletion)
+                }
+            } catch {
+                print("Error deleting Category with Error = \(error)")
+            }
+        }
+    }
+
     //MARK: - Add New Category Methods
     
     
@@ -106,9 +119,12 @@ class CategoryViewController: UITableViewController {
         
         present(alert, animated: true, completion: nil)
         
-        
-    }
-    
-
-    
+    }  
 }
+
+
+
+
+
+
+
